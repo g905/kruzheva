@@ -1,0 +1,5 @@
+/dist
+node_modules/
+Верстка/
+package-lock.json
+.idea
