@@ -59,6 +59,7 @@ $(()=>{
         "infinite": false,
         "arrows": false,
         "dots": true,
+        "appendDots": $('.slick-controls'),
         "autoplay": false,
         "slidesToShow": 4,
         responsive: [{
@@ -66,16 +67,43 @@ $(()=>{
             "settings": {
                 "slidesToShow": 1
             }
-        }
-        ]
+        }]
     };
+
+    let slickAfisha = {
+        "infinite": false,
+        "arrows": false,
+        "dots": true,
+        "appendDots": $('.slick-controls-afisha'),
+        "autoplay": false,
+        "slidesToShow": 4,
+        responsive: [{
+            "breakpoint": "960",
+            "settings": {
+                "slidesToShow": 1
+            }
+        }]
+    };
+    let slickGallery = {
+        "infinite": false,
+        "arrows": false,
+        "dots": true,
+        "appendDots": $('.slick-controls-gallery'),
+        "autoplay": false,
+        "slidesToShow": 4,
+        responsive: [{
+            "breakpoint": "960",
+            "settings": {
+                "slidesToShow": 1
+            }
+        }]
+    };
+
+    $('.slick-events').slick(slickAfisha);
+    $('.slick-gallery').slick(slickGallery);
 
     $('.slick1').each((idx, el)=>{
         $(el).slick(slick1);
     });
-
-    $('.slick4').each((idx, el)=>{
-        $(el).slick(slick4);
-    })
 
 });

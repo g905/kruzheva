@@ -5,7 +5,7 @@
 $font-stack: -apple-system, BlinkMacSystemFont,Merriweather,'Open Sans','Helvetica Neue',sans-serif
 $font-stack-lato: -apple-system, BlinkMacSystemFont,Lato,'Open Sans','Helvetica Neue',sans-serif
 
-$trans: all .4s ease-in-out
+$trans: all .3s ease-in-out
 
 // ====================================== Colors ========================================
 
@@ -69,7 +69,9 @@ body
   -moz-osx-font-smoothing: grayscale
 
 section
-  margin-bottom: 0px
+  margin-bottom: 100px
+#header, #mainmenu, #gallery
+  margin-bottom: 0
 
 ul
   margin: auto
@@ -113,6 +115,7 @@ li:focus,
 .card
   background: $black
   border: unset
+  cursor: pointer
 .card-body
   position: absolute
   bottom: 0
@@ -256,6 +259,10 @@ li:focus,
 // ====================================== Afisha ====================================
 
 #afisha
+  position: relative
+  .bg-img
+    position: absolute
+    top: -50%
   .title, .all-events
     text-transform: uppercase
   .item
@@ -285,3 +292,15 @@ li:focus,
     opacity: 0
     bottom: -100px
 
+// ======================================= Gallery ====================================
+
+#gallery
+  background-image: url("../img/Group 100.png")
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+  padding-bottom: 150px
+  .card
+    transition: $trans
+    &:hover
+      transform: scale(.98)

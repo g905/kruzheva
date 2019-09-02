@@ -1,7 +1,9 @@
-section#afisha
+section#afisha(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="center-bottom")
+    .bg-img
+        img(src="img/_.png" data-aos="fade-right" data-aos-duration="1000" data-aos-anchor-placement="center-bottom").img-fluid
     .top
         .container
-            .row.align-items-center.text-center.mb-5
+            .row.align-items-center.text-center.mb-1
                 .col
                     .all-events
                         a(href="#") Все мероприятия
@@ -9,12 +11,12 @@ section#afisha
                     .title
                         h3 Афиша
                 .col
-                    .slick-controls слик точки
+                    .slick-controls-afisha
     .content
         .container-fluid
             .row
                 .col-12
-                    .slick4.slick-events.m-auto
+                    .slick-events.m-auto
                         - let n = 1
                         while n < 6
                             - d = (100*n).toString()

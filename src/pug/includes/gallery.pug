@@ -1,0 +1,24 @@
+section#gallery(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="center-bottom")
+    .top
+        .container
+            .row.align-items-center.text-center.mb-1
+                .col
+                    .all-photos
+                        a(href="#") Все фото
+                .col
+                    .title
+                        h3 Фотогалерея
+                .col
+                    .slick-controls-gallery
+    .content
+        .container-fluid
+            .row
+                .col-12
+                    .slick-gallery.m-auto
+                        - let n = 1
+                        while n < 6
+                            - d = (100*n).toString()
+                            .item(data-aos="fade-up" data-aos-duration="1000" data-aos-delay=d data-aos-anchor-placement="center-bottom")
+                                .card
+                                    .card-wrap
+                                    img(src="img/Maskgroup"+n+".png" alt=""+n++).img-fluid
