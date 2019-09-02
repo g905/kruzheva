@@ -99,9 +99,56 @@ $(()=>{
         }]
     };
 
+    let slickServices = {
+        "infinite": false,
+        "arrows": false,
+        "dots": true,
+        "appendDots": $('.slick-controls-services'),
+        "autoplay": false,
+        "slidesToShow": 4,
+        responsive: [{
+            "breakpoint": "960",
+            "settings": {
+                "slidesToShow": 1
+            }
+        }]
+    };
+
+    let slickNews = {
+        "infinite": false,
+        "arrows": false,
+        "dots": true,
+        "appendDots": $('.slick-controls-news'),
+        "autoplay": false,
+        "slidesToShow": 2,
+        responsive: [{
+            "breakpoint": "960",
+            "settings": {
+                "slidesToShow": 1
+            }
+        }]
+    };
+
+    let slickArticles = {
+        "infinite": false,
+        "arrows": false,
+        "dots": true,
+        "appendDots": $('.slick-controls-articles'),
+        "autoplay": false,
+        "slidesToShow": 2,
+        responsive: [{
+            "breakpoint": "960",
+            "settings": {
+                "slidesToShow": 1
+            }
+        }]
+    };
+
     $('.slick-events').slick(slickAfisha);
     $('.slick-gallery').slick(slickGallery);
-
+    $('.slick-services').slick(slickServices);
+    $('.slick-news').slick(slickNews);
+    $('.slick-articles').slick(slickArticles);
     $('.slick1').each((idx, el)=>{
         $(el).slick(slick1);
     });

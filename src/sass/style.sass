@@ -70,6 +70,7 @@ body
 
 section
   margin-bottom: 100px
+  overflow: hidden
 #header, #mainmenu, #gallery
   margin-bottom: 0
 
@@ -260,6 +261,7 @@ li:focus,
 
 #afisha
   position: relative
+  overflow: visible
   .bg-img
     position: absolute
     top: -50%
@@ -301,6 +303,28 @@ li:focus,
   background-size: cover
   padding-bottom: 150px
   .card
-    transition: $trans
-    &:hover
-      transform: scale(.98)
+    overflow: hidden
+    img
+      transition: all 1s ease-out
+      &:hover
+        transform: scale(1.02)
+
+// ======================================= Services ====================================
+
+#services
+  .card
+    overflow: hidden
+    img
+      transition: all 1s ease-out
+      &:hover
+        transform: scale(1.02)
+
+// ======================================= Info ========================================
+
+#info
+  .card
+    overflow: hidden
+    img
+      transition: all 1s ease-out
+      &:hover
+        transform: scale(1.02)

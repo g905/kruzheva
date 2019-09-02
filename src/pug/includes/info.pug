@@ -1,0 +1,43 @@
+section#info(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="center-bottom")
+    .container-fluid
+        .row
+            .col-6
+                .news-container
+                    .row.d-flex.align-items-center
+                        .col-6
+                            .title
+                                h3 Новости
+                        .col-6
+                            .slick-controls-news
+                    .slick-news.m-auto
+                            - let n = 1
+                            while n < 6
+                                - d = (100*n).toString()
+                                .item(data-aos="fade-up" data-aos-duration="1000" data-aos-delay=d data-aos-anchor-placement="center-bottom")
+                                    .card
+                                        .card-wrap
+                                        img(src="img/svc_img" + n + ".png").img-fluid
+                                        .card-body
+                                            h5.card-title="Название Новости " + n++
+                                            p.card-text В рамках спецификации современных стандартов, предприниматели в сети...&nbsp;
+                                                a(href="#") Читать далее
+            .col-6
+                .articles-container
+                    .row.d-flex.align-items-center
+                        .col-6
+                            .title
+                                h3 Статьи
+                        .col-6
+                            .slick-controls-articles
+                    .slick-articles.m-auto
+                        - n = 1
+                        while n < 6
+                            - d = (100*n).toString()
+                            .item(data-aos="fade-up" data-aos-duration="1000" data-aos-delay=d data-aos-anchor-placement="center-bottom")
+                                .card
+                                    .card-wrap
+                                    img(src="img/svc_img" + n + ".png").img-fluid
+                                    .card-body
+                                        h5.card-title="Название статьи " + n++
+                                        p.card-text В рамках спецификации современных стандартов, предприниматели в сети...&nbsp;
+                                            a(href="#") Читать далее

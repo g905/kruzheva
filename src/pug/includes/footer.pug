@@ -1,0 +1,19 @@
+- let icons = ["fa-viber", "fa-whatsapp", "fa-skype", "fa-vk", "fa-instagram", "fa-facebook", "fa-youtube"]
+- let menuItems = {"about": "О компании", "afisha": "Афиша", "gallery": "Фотогалерея", "services": "Услуги клуба", "info": "Новости и статьи", "about-club":"О клубе"}
+section#footer
+    .container
+        .row
+            .col-2
+                .social-icons
+                    ul.d-flex.text-left.w-80
+                        each icon in icons
+                            li
+                                a
+                                    i.fab(class=icon)
+
+            .col-4
+                .footer-menu
+            .col-2
+                .footer-contacts
+            .col-3
+                .footer-btn
