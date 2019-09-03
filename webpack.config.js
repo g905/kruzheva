@@ -122,7 +122,12 @@ module.exports = {
             }
         }),
         new HtmlWebpackPlugin({
-            template: './src/pug/index.pug'
+            filename: 'index.html',
+            template: './src/pug/views/index.pug'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'about.html',
+            template: './src/pug/views/about.pug'
         }),
     ]
 };
