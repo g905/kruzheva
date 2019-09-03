@@ -17,7 +17,21 @@ module.exports = {
               sourceMap: true
           }),
           new OptimizeCSSAssetsPlugin({})
-      ]
+      ],
+        runtimeChunk: {name: 'common'},
+        splitChunks: {
+            cacheGroups: {
+                default: false,
+                commons: {
+                    test: /\.jsx?$/,
+                    chunks: 'all',
+                    minChunks: 2,
+                    name: 'common',
+                    enforce: true,
+                },
+            },
+        },
+
     },
     entry: [
         './src/js/index.js',

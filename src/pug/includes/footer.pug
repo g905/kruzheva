@@ -2,10 +2,10 @@
 - let menuItems = {"about": "О компании", "afisha": "Афиша", "gallery": "Фотогалерея", "services": "Услуги клуба", "info": "Новости и статьи", "about-club":"О клубе"}
 section#footer
     .container
-        .row
-            .col-2
+        .row.d-flex.align-items-center
+            .col-3
                 .social-icons
-                    ul.d-flex.text-left.w-80
+                    ul.d-flex.flex-wrap.text-left.w-80
                         each icon in icons
                             li
                                 a
@@ -13,7 +13,18 @@ section#footer
 
             .col-4
                 .footer-menu
+                    ul.w-80.justify-content-between.pb-3.pb-lg-0.ml-0
+                        each item, idx in menuItems
+                            li
+                                a(href='#' + idx)=item
             .col-2
-                .footer-contacts
+                .footer-contacts.text-right
+                    .hours Ежедневно <br> c 22:00 до 6:00
+                    .addr Удмуртия, г. Ижевск<br>ул. Ижевская 2
             .col-3
-                .footer-btn
+                .footer-btn.text-right
+                    .tel
+                        a(href="tel:+79128577186") +79128577186
+                    .email.mb-3
+                        a(href="mailto:login@gmail.com") login@gmail.com
+                    .btn.kruzheva-btn Получить приглашение

@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import 'popper.js';
 import 'bootstrap';
+//import 'bootstrap/js/dist/util';
 import AOS from 'aos'
 import 'slick-carousel'
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
