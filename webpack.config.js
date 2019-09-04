@@ -129,5 +129,9 @@ module.exports = {
             filename: 'about.html',
             template: './src/pug/views/about.pug'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'privileges.html',
+            template: './src/pug/views/privileges.pug'
+        }),
     ]
 };
