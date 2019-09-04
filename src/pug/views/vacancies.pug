@@ -1,1 +1,35 @@
 extends ../includes/layout
+
+mixin card(img)
+    .card.vacancy-card.mb-5
+        img(src=img).img-fluid
+        .card-body
+            .title
+                h4 Название вакансии
+            .content
+                p Диаграммы связей ассоциативно распределены по отраслям. Безусловно, укрепление и развитие внутренней структуры однозначно определяет каждого участника как способного принимать собственные решения касаемо стандартных подходов.
+                p <strong>График работы:</strong> название графика
+                p <strong>Обязанности:</strong>
+                ul
+                    li Диаграммы связей ассоциативно распределены по отраслям.
+                    li Безусловно, укрепление и развитие внутренней структуры.
+                    li Диаграммы связей ассоциативно распределены по отраслям.
+                p <strong>Условия:</strong>
+                    ul
+                        li Диаграммы связей ассоциативно распределены по отраслям.
+                        li Безусловно, укрепление и развитие внутренней структуры.
+                        li Диаграммы связей ассоциативно распределены по отраслям.
+                        li Безусловно, укрепление и развитие внутренней структуры.
+                        li Диаграммы связей ассоциативно распределены по отраслям.
+            .card-bottom
+                button.btn.kruzheva-btn Откликнуться на вакансию
+block content
+    section#pagecontent.page-vacancies.mt-5.mb-5(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="top-bottom")
+        .container
+            .title.text-center.m-5
+                h3 Вакансии
+            .wrap.d-flex.flex-wrap.justify-content-around
+                +card("img/Mask Group (6).png")
+                +card("img/Mask Group (7).png")
+                +card("img/Mask Group (8).png")
+                +card("img/Mask Group (9).png")
