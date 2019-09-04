@@ -126,12 +126,48 @@ module.exports = {
             template: './src/pug/views/index.pug'
         }),
         new HtmlWebpackPlugin({
+            filename: 'main.html',
+            template: './src/pug/views/main.pug'
+        }),
+        new HtmlWebpackPlugin({
             filename: 'about.html',
             template: './src/pug/views/about.pug'
         }),
         new HtmlWebpackPlugin({
             filename: 'privileges.html',
             template: './src/pug/views/privileges.pug'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'menu.html',
+            template: './src/pug/views/menu.pug'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'vacancies.html',
+            template: './src/pug/views/vacancies.pug'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'gallery.html',
+            template: './src/pug/views/gallery.pug'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'album.html',
+            template: './src/pug/views/album.pug'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'afisha.html',
+            template: './src/pug/views/page_afisha.pug'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'news.html',
+            template: './src/pug/views/news.pug'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'news-detail.html',
+            template: './src/pug/views/news_detail.pug'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'contacts.html',
+            template: './src/pug/views/contacts.pug'
         }),
     ]
 };

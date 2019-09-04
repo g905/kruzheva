@@ -1,9 +1,23 @@
-extends ../includes/layout
+mixin page(href, title)
+    li
+        h3
+            a(href=href)=title
+doctype html
 
-block content
-    include ../includes/carousel
-    include ../includes/afisha
-    include ../includes/gallery
-    include ../includes/services
-    include ../includes/about
-    include ../includes/info
+html(lang="ru")
+    include ../includes/head
+    body
+        include ../includes/loader
+        .container.mt-5
+            ul
+                +page("main.html", "Главная")
+                +page("about.html", "О клубе")
+                +page("privileges.html", "Привилегии")
+                +page("menu.html", "Меню клуба")
+                +page("vacancies.html", "Вакансии")
+                +page("gallery.html", "Галерея")
+                +page("album.html", "Альбом")
+                +page("page_afisha.html", "Афиша")
+                +page("news.html", "Новости")
+                +page("news-detail.html", "Новость")
+                +page("contacts.html", "Контакты")
