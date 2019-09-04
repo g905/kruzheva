@@ -1,4 +1,39 @@
 extends ../includes/layout
 
+mixin menutab(title)
+    .title.text-center.mb-5
+        h4=title
+    table.table.table-striped.table-dark.table-borderless
+        tbody
+            - let n = 1
+            while n < 12
+                tr.row.align-items-center
+                    th(scope="row").col-2.text-center="Название блюда "+n++
+                    td.col-8 Здесь вы можете создать/редактировать сниппеты. Помните, сниппеты — это «сырой» PHP-код, и если вы собираетесь делать вывод из сниппета, который будет в определенном месте шаблона, вам необходимо вернуть значение из сниппета.
+                    td.col-1 800 руб
+                    td.col-1 200 гр
+
 block content
-    section#pagecontent.mt-5(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="center-bottom").mb-0
+    section#pagemenu.mt-5(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="top-bottom").mb-5
+        .container
+            .title.text-center.m-5
+                h3 Меню
+            nav
+                .nav.nav-tabs.justify-content-center.text-center#nav-tab(role="tablist")
+                    a.nav-item.nav-link.active#nav-home-tab(data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true")
+                        img(src="img/1.png")
+                        p Ресторанное меню
+                    a.nav-item.nav-link#nav-profile-tab(data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false")
+                        img(src="img/2.png")
+                        p Crazy меню
+                    a.nav-item.nav-link#nav-contact-tab(data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false")
+                        img(src="img/3.png")
+                        p Кальянное меню
+
+            .tab-content#nav-tabContent
+                .tab-pane.fade.show.active#nav-home(role="tabpanel" aria-labelledby="nav-home-tab")
+                    +menutab("Ресторанное меню")
+                .tab-pane.fade#nav-profile(role="tabpanel" aria-labelledby="nav-profile-tab")
+                    +menutab("Crazy меню")
+                .tab-pane.fade#nav-contact(role="tabpanel" aria-labelledby="nav-contact-tab")
+                    +menutab("Кальянное меню")
