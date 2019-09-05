@@ -1,1 +1,26 @@
 extends ../includes/layout
+
+mixin album_img(img)
+    .item
+        img(src=img)
+
+block content
+    section#pagecontent.page-album.mt-5.mb-5(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="top-bottom")
+        .container-fluid
+            .title.text-center.m-5
+                h3 Название альбома
+            .content
+                .slick.slick-album
+                    +album_img("img/Maskgroup5.png")
+                    +album_img("img/Maskgroup4.png")
+                    +album_img("img/Maskgroup3.png")
+                    +album_img("img/Maskgroup2.png")
+                    +album_img("img/Maskgroup1.png")
+                    +album_img("img/Maskgroup3.png")
+                    +album_img("img/Maskgroup1.png")
+                    +album_img("img/Maskgroup2.png")
+        .container
+            .album-description
+                p Имеется спорная точка зрения, гласящая примерно следующее: акционеры крупнейших компаний будут объявлены нарушающими общечеловеческие нормы этики и морали.
+                p Имеется спорная точка зрения, гласящая примерно следующее: акционеры крупнейших компаний будут объявлены нарушающими общечеловеческие нормы этики и морали. Лишь явные признаки победы институциализации ассоциативно распределены по отраслям.
+                p Прежде всего, высокотехнологичная концепция общественного уклада создает необходимость включения в производственный план целого ряда внеочередных мероприятий с учетом комплекса новых принципов формирования материально-технической и кадровой базы. И нет сомнений, что базовые сценарии поведения пользователей формируют глобальную экономическую сеть и при этом - объективно рассмотрены соответствующими инстанциями.

@@ -145,11 +145,26 @@ $(()=>{
         }]
     };
 
+    let slickAlbum = {
+        "infinite": false,
+        "arrows": false,
+        "dots": true,
+        "autoplay": false,
+        "slidesToShow": 4,
+        responsive: [{
+            "breakpoint": "960",
+            "settings": {
+                "slidesToShow": 1
+            }
+        }]
+    };
+
     $('.slick-events').slick(slickAfisha);
     $('.slick-gallery').slick(slickGallery);
     $('.slick-services').slick(slickServices);
     $('.slick-news').slick(slickNews);
     $('.slick-articles').slick(slickArticles);
+    $('.slick-album').slick(slickAlbum);
     $('.slick1').each((idx, el)=>{
         $(el).slick(slick1);
     });
