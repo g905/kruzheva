@@ -4,26 +4,26 @@ section#afisha(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-place
     .top
         .container
             .row.align-items-center.text-center.mb-1
-                .col
+                .col-12.col-lg-2.order-3.order-lg-1
                     .all-events
                         a(href="#") Все мероприятия
-                .col
+                .col-12.col-lg-8.order-1.order-lg-2
                     .title
                         h3 Афиша
-                .col
+                .col-12.col-lg-2.order-4.order-lg-3
                     .slick-controls-afisha
-    .content
-        .container-fluid
-            .row
-                .col-12
-                    .slick-events.m-auto
-                        - let n = 1
-                        while n < 6
-                            - d = (100*n).toString()
-                            .item(data-aos="fade-up" data-aos-duration="1000" data-aos-delay=d data-aos-anchor-placement="center-bottom")
-                                .card
-                                    .card-wrap
-                                    img(src="img/event-card-no-gradient"+n+".png").img-fluid
-                                    .card-body
-                                        h4.card-title="Название мероприятия "+n++
-                                        p.card-text В рамках спецификации рамках спецификации  рамках спецификации рамках спецификации рамках спецификации современных стандартов, предприниматели в сети.
+        .content.mt-5.mb-5
+            .container-fluid
+                .row
+                    .col-12
+                        .slick-events.m-auto
+                            - let n = 1
+                            while n < 6
+                                - d = (100*n).toString()
+                                .item(data-aos="fade-up" data-aos-duration="1000" data-aos-delay=d data-aos-anchor-placement="center-bottom")
+                                    .card
+                                        .card-wrap
+                                        img(src="img/event-card-no-gradient"+n+".png").img-fluid
+                                        .card-body
+                                            h4.card-title="Название мероприятия "+n++
+                                            p.card-text В рамках спецификации рамках спецификации  рамках спецификации рамках спецификации рамках спецификации современных стандартов, предприниматели в сети.

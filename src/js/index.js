@@ -13,6 +13,33 @@ library.add( faViber, faSkype, faWhatsapp, faVk, faYoutube, faFacebook, faInstag
 dom.watch();
 
 $(()=>{
+    // Navbar icon animation ==============
+    $('.nav-button').on('click', function () {
+        $('.animated-icon1').toggleClass('open');
+    });
+
+    // Scroll to section ==============
+    $('.nav-link').each(function () {
+        $(this).on('click', function (e) {
+            e.preventDefault();
+            var sec = $(this).attr('href');
+            var offs = 0;
+
+            if (window.scrollY < 150) {
+                offs = 40;
+            }
+
+            if (sec === '#portfolio' || sec === '#order' || sec === '#contact') {
+                $("html, body").animate({
+                    scrollTop: $(sec).offset().top - (70 + offs)
+                }, 'slow');
+            } else {
+                $("html, body").animate({
+                    scrollTop: $(sec).find('h2').offset().top - (70 + offs)
+                }, 'slow');
+            }
+        });
+    });
     // ====================================== Animate on scroll ====================================
     AOS.init();
 
@@ -110,7 +137,9 @@ $(()=>{
         responsive: [{
             "breakpoint": "960",
             "settings": {
-                "slidesToShow": 1
+                "slidesToShow": 4,
+                "vertical": true,
+                "verticalSwiping": true
             }
         }]
     };

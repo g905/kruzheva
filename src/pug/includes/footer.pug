@@ -3,28 +3,29 @@
 section#footer
     .container
         .row.d-flex.align-items-center
-            .col-3
+            .col-12.col-lg-3.order-4.order-lg-1
                 .social-icons
-                    ul.d-flex.flex-wrap.text-left.w-80
+                    ul.d-flex.flex-nowrap.flex-lg-wrap.text-left.justify-content-around.w-80.mt-3.mb-3
                         each icon in icons
                             li
                                 a
                                     i.fab(class=icon)
 
-            .col-4
+            .col-12.col-lg-4.d-none.d-lg-block
                 .footer-menu
                     ul.w-80.justify-content-between.pb-3.pb-lg-0.ml-0
                         each item, idx in menuItems
                             li
                                 a(href='#' + idx)=item
-            .col-2
+            .col-12.col-lg-2.d-none.d-lg-block
                 .footer-contacts.text-right
                     .hours Ежедневно <br> c 22:00 до 6:00
                     .addr Удмуртия, г. Ижевск<br>ул. Ижевская 2
-            .col-3
-                .footer-btn.text-right
-                    .tel
+            .col-12.col-lg-3
+                .footer-btn.text-center.text-lg-right
+                    .btn.kruzheva-btn.d-block.d-lg-none.mt-5.mb-5 Получить приглашение
+                    .tel.mb-3.mb-lg-0
                         a(href="tel:+79128577186") +79128577186
                     .email.mb-3
                         a(href="mailto:login@gmail.com") login@gmail.com
-                    .btn.kruzheva-btn Получить приглашение
+                    .btn.kruzheva-btn.d-none.d-lg-block Получить приглашение

@@ -1,51 +1,45 @@
 - let icons = ["fa-viber", "fa-whatsapp", "fa-skype", "fa-vk", "fa-instagram", "fa-facebook", "fa-youtube"]
 - let menuItems = {"about": "О компании", "afisha": "Афиша", "gallery": "Фотогалерея", "services": "Услуги клуба", "info": "Новости и статьи", "about-club":"О клубе"}
 section#mainmenu
-    .container.h-100
-        .row.d-flex.justify-content-between.text-center.align-items-center.h-100
-            .col-3
-                .social-icons
-                    ul.d-flex.text-left
-                        each icon in icons
-                            li
-                                a
-                                    i.fab(class=icon)
-            .col-7
-                nav#navbar.navbar.navbar-expand-lg.navbar-light.pr-0.pl-0
-                    .navbar-top.d-flex.d-lg-none.align-items-center
-                        .adaptive-logo.w-50
-                            img(src="dist/img/logo.png" alt="")
-                        .menu-btn.w-50.text-right.p-2
-                            button.navbar-toggler.nav-button(type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
-                                .animated-icon1
-                                    span
-                                    span
-                                    span
-                    #navbarNav.collapse.navbar-collapse.justify-content-lg-around.text-center
-                        ul.navbar-nav.w-80.justify-content-between.pb-3.pb-lg-0.ml-0
-                            each item, idx in menuItems
-                                li.nav-item
-                                    a.nav-link(href='#'+idx)=item
-                            // more list items here
-                        .row.d-flex.d-lg-none.mt-3
-                            .col-12.mb-4
-                                button.btn.ps-btn.btn-bg Заказать звонок
-                            .col-12.col-sm-5.text-center.text-sm-left.m-auto.pb-3
-                                div
-                                    | г. Ижевск
-                                    br
-                                    | ул. Клубная, 24
-                            .offset-0.offset-sm-1
-                            .col-12.col-sm-5.text-center.text-sm-right.m-auto
-                                div +79128577186
-                                div breakestra@yandex.ru
-                            .col-12
-                                .social-icons
-                                    ul.d-flex.justify-content-around.w-50.p-3
-                                        each icon in icons
-                                            li
-                                                a
-                                                    i.fab(class=icon)
-            .col-2
-                .invite-button
+    .div-space
+    .container.p-0
+        nav.navbar.navbar-expand-lg
+            a.navbar-brand(href="#").d-block.d-lg-none
+                .adaptive-logo.w-50
+                    img(src="img/logo_sm.png" alt="")
+            .social-icons.d-none.d-lg-block
+                ul.d-flex.text-left
+                    each icon in icons
+                        li
+                            a
+                                i.fab(class=icon)
+            button.navbar-toggler.nav-button(type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation")
+                .animated-icon1
+                    span
+                    span
+                    span
+            .collapse.navbar-collapse.text-center#navbar1
+                ul.navbar-nav.m-auto.d-flex.justify-content-between
+                    each item, idx in menuItems
+                        li.nav-item
+                            a.nav-link(href='#' + idx)=item
+
+                .invite-button.mt-5.mt-lg-0.ml-0.ml-lg-5
                     .btn.kruzheva-btn Получить приглашение
+                .mob-block.d-block.d-lg-none
+                    .contacts-mob.mt-4.d-flex.justify-content-between
+                        .addr.text-left Удмуртия, г. Ижевск<br>ул. Ижевская 2
+                        .contact.text-right
+                            .tel
+                                a(href="tel:+79128577186") +79128577186
+                            .email
+                                a(href="mailto:login@gmail.com") login@gmail.com
+
+                    .hours.mt-4 Ежедневно c 22:00 до 6:00
+
+                    .social-icons.d-block.d-lg-none.mt-4
+                        ul.d-flex.justify-content-between
+                            each icon in icons
+                                li
+                                    a
+                                        i.fab(class=icon)

@@ -1,13 +1,13 @@
 section#info(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="center-bottom")
     .container-fluid
         .row
-            .col-6
+            .col-12.col-lg-6
                 .news-container
                     .row.d-flex.align-items-center
-                        .col-6
-                            .title
+                        .col-12.col-lg-6
+                            .title.text-center.text-lg-left
                                 h3 Новости
-                        .col-6
+                        .col-12.col-lg-6
                             .slick-controls-news
                     .slick-news.m-auto
                             - let n = 1
@@ -21,13 +21,13 @@ section#info(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placeme
                                             h5.card-title="Название Новости " + n++
                                             p.card-text В рамках спецификации современных стандартов, предприниматели в сети...&nbsp;
                                                 a(href="#") Читать далее
-            .col-6
+            .col-12.col-lg-6
                 .articles-container
                     .row.d-flex.align-items-center
-                        .col-6
-                            .title
+                        .col-12.col-lg-6
+                            .title.text-center.text-lg-left
                                 h3 Статьи
-                        .col-6
+                        .col-12.col-lg-6
                             .slick-controls-articles
                     .slick-articles.m-auto
                         - n = 1
