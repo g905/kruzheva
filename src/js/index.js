@@ -6,8 +6,8 @@ import AOS from 'aos'
 import 'slick-carousel'
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import { faViber, faSkype, faWhatsapp, faVk, faYoutube, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
-library.add( faViber, faSkype, faWhatsapp, faVk, faYoutube, faFacebook, faInstagram, faMapMarkerAlt );
+import { faMapMarkerAlt, faSearch } from '@fortawesome/free-solid-svg-icons'
+library.add( faViber, faSkype, faWhatsapp, faVk, faYoutube, faFacebook, faInstagram, faMapMarkerAlt, faSearch );
 
 // ====================================== Replace fa-icons with SVGs ===============================
 dom.watch();
@@ -21,7 +21,7 @@ $(()=>{
     // Scroll to section ==============
     $('.nav-link').each(function () {
         $(this).on('click', function (e) {
-            e.preventDefault();
+            //e.preventDefault();
             var sec = $(this).attr('href');
             var offs = 0;
 
@@ -58,6 +58,15 @@ $(()=>{
             location.href = 'tel:'+phone;
         }
 
+    });
+
+    // ====================================== Search ===============================================
+
+    $('.search').focus(function(e){
+        $('.search').addClass('full-width');
+    });
+    $('.search').focusout(function(e){
+        $('.search').removeClass('full-width');
     });
 
     // ====================================== Test pug and js ======================================

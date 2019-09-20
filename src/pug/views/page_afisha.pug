@@ -1,1 +1,17 @@
 extends ../includes/layout
+block content
+    section#afisha.mt-5.mb-5
+        .container
+            .title.text-center.mb-5
+                h3 Афиша
+            .row.d-flex.flex-wrap.justify-content-around
+                - let n = 1
+                while n < 6
+                    - d = (100*n).toString()
+                    .item.mb-5(data-aos="fade-up" data-aos-duration="1000" data-aos-delay=d data-aos-anchor-placement="center-bottom")
+                        .card
+                            .card-wrap
+                            img(src="img/event-card-no-gradient" + n + ".png").img-fluid
+                            .card-body
+                                h4.card-title="Название мероприятия " + n++
+                                p.card-text В рамках спецификации рамках спецификации  рамках спецификации рамках спецификации рамках спецификации современных стандартов, предприниматели в сети.

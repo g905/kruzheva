@@ -1,7 +1,7 @@
 - let icons = ["fa-viber", "fa-whatsapp", "fa-skype", "fa-vk", "fa-instagram", "fa-facebook", "fa-youtube"]
 - let menuItems = {"about": "О компании", "afisha": "Афиша", "gallery": "Фотогалерея", "services": "Услуги клуба", "info": "Новости и статьи", "about-club":"О клубе"}
+.div-space
 section#mainmenu
-    .div-space
     .container.p-0
         nav.navbar.navbar-expand-lg
             a.navbar-brand(href="#").d-block.d-lg-none
@@ -22,7 +22,7 @@ section#mainmenu
                 ul.navbar-nav.m-auto.d-flex.justify-content-between
                     each item, idx in menuItems
                         li.nav-item
-                            a.nav-link(href='#' + idx)=item
+                            a.nav-link(href='' + idx)=item
 
                 .invite-button.mt-5.mt-lg-0.ml-0.ml-lg-5
                     .btn.kruzheva-btn Получить приглашение
