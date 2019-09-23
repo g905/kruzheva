@@ -69,6 +69,18 @@ $(()=>{
         $('.search').removeClass('full-width');
     });
 
+    // ====================================== Vacancy slide ========================================
+
+    $('.vacancy-title').click(function(e){console.log($(e.target).closest('.mycard').hasClass('hidden')); $(e.target).closest('.mycard').toggleClass('hidden')});
+
+    // ====================================== Vacancy-resize =======================================
+
+    if ($(window).width() < 514) {
+        $('.mycard').addClass('hidden');
+    } else {
+        $('.mycard').removeClass('hidden');
+    }
+
     // ====================================== Test pug and js ======================================
 
     let template = require("../pug/users.pug");

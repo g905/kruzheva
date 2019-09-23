@@ -1,10 +1,26 @@
 extends ../includes/layout
 block content
-    section#page_news.mt-5.mb-5
+    section#page_news.mt-5.mb-5(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="top-bottom")
         .container
             .title.text-center.mb-5
                 h3 Новости
-            .row.mb-5.d-flex.align-items-center
+            .row.filters.mb-5
+                .col-6.col-lg-3
+                    .filter
+                        .input-group.mb-2.mr-sm-2
+                            .input-group-prepend
+                                .input-group-text.d-none.d-lg-block Фильтры
+                            input(type="text" id="inlineFormInputGroupUsername2" value="По дате").form-control.py-0
+                .col
+                    .search
+                        .input-group.md-form.form-sm.form-2.pl-0
+                            input.form-control.my-0.py-1.red-border(type="text" placeholder="Поиск по новостям" aria-label="Search")
+                            .input-group-append
+                                span.input-group-text.red.lighten-3(id="basic-text1")
+                                    i.fas.fa-search.text-grey(aria-hidden="true")
+                .col-0.col-lg-2
+                    .display
+            //.row.mb-5.d-flex.align-items-center
                 .col-3
                     .filter по дате
                 .col
@@ -15,7 +31,7 @@ block content
                 - let n = 1
                 while n < 6
                     - d = (100*n).toString()
-                    .item(data-aos="fade-up" data-aos-duration="1000" data-aos-delay=d data-aos-anchor-placement="center-bottom")
+                    .col-12.col-lg-4.item(data-aos="fade-up" data-aos-duration="1000" data-aos-delay=d data-aos-anchor-placement="center-bottom")
                         .card.card-hover
                             .card-wrap
                             img(src="img/svc_img" + n + ".png").img-fluid
@@ -23,4 +39,3 @@ block content
                                 h5.card-title="Название Новости " + n++
                                 p.card-text В рамках спецификации современных стандартов, предприниматели в сети...&nbsp;
                                     a(href="#") Читать далее
-

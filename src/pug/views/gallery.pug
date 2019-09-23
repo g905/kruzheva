@@ -1,15 +1,15 @@
 extends ../includes/layout
 
 mixin gallery_card(img)
-    .card.gallery-card.card-hover.w-25
-        img(src=img)
+    .card.gallery-card.card-hover
+        img.img-fluid(src=img)
 
 block content
     section#pagecontent.page-gallery.mt-5.mb-5(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="top-bottom")
         .container-fluid
-            .title.text-center.m-5
+            .title.text-center.m-3.m-lg-5
                 h3 Фотогалерея
-            .content.d-flex.flex-wrap
+            .content.d-flex.flex-wrap.justify-content-center
                 +gallery_card("img/Maskgroup5.png")
                 +gallery_card("img/Maskgroup4.png")
                 +gallery_card("img/Maskgroup3.png")

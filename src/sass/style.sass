@@ -13,6 +13,7 @@ $black: #000
 $white: #F1D8B2
 $brown: #C89554
 $red: #CE0000
+$lgray: rgba(255, 255, 255, .7)
 
 // ====================================== Typo ==========================================
 
@@ -249,6 +250,7 @@ li:focus,
   transition: $trans
   white-space: nowrap
   opacity: .9
+  max-width: 200px
   &:hover
     opacity: 1
 
@@ -317,7 +319,7 @@ li:focus,
   height: 110px
   z-index: 999
   position: relative
-  margin-top: 70px
+  margin-top: 20px
   .fa-map-marker-alt
     color: $red
     font-size: 25px
@@ -419,6 +421,9 @@ li:focus,
     columns: 2
     li
       list-style-type: none
+  .footer-btn
+    .kruzheva-btn
+      margin: 1.2rem auto
 
 // ======================================= PAGES ======================================
 
@@ -441,20 +446,55 @@ li:focus,
       margin-right: 0
       margin-left: 0
 
+// ======================================= Gallery =====================================
+
+.page-gallery
+  .card
+    max-width: 25%
+    min-width: 300px
+
 // ======================================= Vacancies ===================================
 
 .page-vacancies
   .card
-    /*max-width: 45%*/
     line-height: 150%
     .card-body
       position: absolute
       top: 0
-      /*padding: 50px*/
+      overflow-y: auto
       p
         margin: 20px 0
       ul
-        margin-left: 20px
+        //margin-left: 20px
+        list-style-position: inside
+.page-vacancies
+  .mycard
+    position: relative
+    background-position: center
+    background-size: cover
+    max-width: 45%
+    transition: $trans
+    max-height: 750px
+    ul
+      list-style-position: inside
+  img
+    position: absolute
+    top: 0
+    //right: 0%
+    width: auto
+    max-width: unset
+    z-index: -1
+  .hidden
+    transition: $trans
+    max-height: 50px
+    margin-top: 0!important
+    margin-bottom: 0!important
+    .content
+      opacity: 0
+@media screen and (max-width: 991px)
+  .page-vacancies
+    .mycard
+      max-width: 100%
 
 ul.greek
   list-style-type: lower-greek
@@ -462,21 +502,48 @@ ul.greek
 // ======================================= News =========================================
 
 #page_news
-  .search-wrap
-    position: relative
-    svg
-      position: absolute
-      top: 10px
-      right: 10px
-  .search
-    width: 40%
-    max-width: 300px
-    border: 0
-    border-radius: 30px
-    padding: 5px 5px
-    background: #333
-    float: right
-    transition: $trans
-    color: $white
   .full-width
     width: 100%
+  .item
+    padding: 0
+  .filter
+    .input-group-text
+      background-color: unset
+      border-radius: 30px 0 0 30px
+      color: #fff
+    .form-control
+      background-color: unset
+      color: $lgray
+      border-radius: 0 30px 30px 0
+      &::placeholder
+        color: #fff
+  .search
+    .form-control
+      background-color: unset
+      color: $lgray
+      border-radius: 30px 0 0 30px
+      border-right: 0
+      line-height: 100
+      &::placeholder
+        color: $lgray
+        line-height: 100%
+    .input-group-text
+      border-left: 0
+      background-color: unset
+      border-radius: 0 30px 30px 0
+      color: #fff
+@media screen and (max-width: 991px)
+  #page_news
+    .form-control, .input-group-text
+      border: 0
+
+// ======================================= News detail ===================================
+
+#page_detail
+  .news-date
+    color: $lgray
+    font-size: 1.2rem
+
+// ======================================= Contacts ======================================
+.p-fix
+  padding-left: 1px

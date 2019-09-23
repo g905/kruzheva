@@ -1,44 +1,19 @@
 extends ../includes/layout
 
-mixin card2(img)
-    .card.vacancy-card
-        .img-wrap
-            img(src=img)
-        .card-body
-            .title
-                h4 Название вакансии
-            .content
-                p Диаграммы связей ассоциативно распределены по отраслям. Безусловно, укрепление и развитие внутренней структуры однозначно определяет каждого участника как способного принимать собственные решения касаемо стандартных подходов.
-                p <strong>График работы:</strong> название графика
-                p <strong>Обязанности:</strong>
-                ul
-                    li Диаграммы связей ассоциативно распределены по отраслям.
-                    li Безусловно, укрепление и развитие внутренней структуры.
-                    li Диаграммы связей ассоциативно распределены по отраслям.
-                p <strong>Условия:</strong>
-                    ul
-                        li Диаграммы связей ассоциативно распределены по отраслям.
-                        li Безусловно, укрепление и развитие внутренней структуры.
-                        li Диаграммы связей ассоциативно распределены по отраслям.
-                        li Безусловно, укрепление и развитие внутренней структуры.
-                        li Диаграммы связей ассоциативно распределены по отраслям.
-                .card-bottom
-                    button.btn.kruzheva-btn Откликнуться на вакансию
-
 mixin card(img)
-    .card.vacancy-card.mb-5
-        img(src=img).img-fluid
-        .card-body
-            .title
+    .mycard.m-1.m-lg-4.pl-2.pr-2.hidden(style="background-image: url('"+img+"')")
+        //-img(src=img).img-fluid
+        .mycard-body.p-1.p-lg-5.pb-5
+            .title.vacancy-title.text-nowrap
                 h4 Название вакансии
             .content
                 p Диаграммы связей ассоциативно распределены по отраслям. Безусловно, укрепление и развитие внутренней структуры однозначно определяет каждого участника как способного принимать собственные решения касаемо стандартных подходов.
                 p <strong>График работы:</strong> название графика
                 p <strong>Обязанности:</strong>
-                ul
-                    li Диаграммы связей ассоциативно распределены по отраслям.
-                    li Безусловно, укрепление и развитие внутренней структуры.
-                    li Диаграммы связей ассоциативно распределены по отраслям.
+                    ul
+                        li Диаграммы связей ассоциативно распределены по отраслям.
+                        li Безусловно, укрепление и развитие внутренней структуры.
+                        li Диаграммы связей ассоциативно распределены по отраслям.
                 p <strong>Условия:</strong>
                     ul
                         li Диаграммы связей ассоциативно распределены по отраслям.
@@ -46,24 +21,14 @@ mixin card(img)
                         li Диаграммы связей ассоциативно распределены по отраслям.
                         li Безусловно, укрепление и развитие внутренней структуры.
                         li Диаграммы связей ассоциативно распределены по отраслям.
-            .card-bottom
+            .mycard-bottom
                 button.btn.kruzheva-btn Откликнуться на вакансию
 block content
-    //section#pagecontent.page-vacancies.mt-5.mb-5(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="top-bottom")
+    section#pagecontent.page-vacancies.mt-5.mb-5(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="top-bottom")
         .container
-            .title.text-center.m-5
+            .title.text-center.m-4.m-lg-5
                 h3 Вакансии
             .wrap.d-flex.flex-wrap.justify-content-around
                 +card("img/Mask Group (6).png")
                 +card("img/Mask Group (7).png")
                 +card("img/Mask Group (8).png")
-                +card("img/Mask Group (9).png")
-    section#pagecontent.page-vacancies.mt-5.mb-5(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="top-bottom")
-        .container
-            .title.text-center.m-5
-                h3 Вакансии
-            .vacancies-wrap
-                +card2("img/Mask Group (6).png")
-                +card2("img/Mask Group (7).png")
-                +card2("img/Mask Group (8).png")
-                +card2("img/Mask Group (9).png")
