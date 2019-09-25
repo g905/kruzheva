@@ -2,7 +2,8 @@ extends ../includes/layout
 
 mixin album_img(img)
     .item
-        img(src=img)
+        a(href="img" data-fancybox)
+            img(src=img alt="")
 
 block content
     section#pagecontent.page-album.mt-5.mb-5(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="top-bottom")
@@ -18,7 +19,7 @@ block content
                     +album_img("img/Maskgroup1.png")
                     +album_img("img/Maskgroup3.png")
                     +album_img("img/Maskgroup1.png")
-                    +album_img("img/Maskgroup2.png")
+                    +album_img("img/Maskgroup2.png") 
         .container
             .album-description
                 p Имеется спорная точка зрения, гласящая примерно следующее: акционеры крупнейших компаний будут объявлены нарушающими общечеловеческие нормы этики и морали.

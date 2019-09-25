@@ -1,17 +1,28 @@
 extends ../includes/layout
 
-mixin menutab(title)
+mixin menutab(title, num)
     .title.text-center.mb-5
         h4=title
-    table.table.table-striped.table-dark.table-borderless
-        tbody
+    table(id = "menuTable"+num).table.table-striped.table-dark.table-borderless
+        thead.d-none.d-lg-block
+            tr.row.text-center
+                th(scope="row").col-12.col-lg-2.sort(data-sort = "dishName") Название
+                    i.fas.fa-chevron-down
+                th(scope="col").col-12.col-lg-8
+                th(scope="col").col-12.col-lg-1.sort(data-sort = "dishPrice") Цена
+                    i.fas.fa-chevron-down
+                th(scope="col").col-12.col-lg-1.sort(data-sort = "dishWeight") Вес
+                    i.fas.fa-chevron-down
+        tbody.list
             - let n = 1
+            - let p = 0.8
             while n < 12
+                - p = Math.floor(Math.random() * Math.floor(5000))
                 tr.row.align-items-center
-                    th(scope="row").col-12.col-lg-2.text-center="Название блюда "+n++
-                    td.col-12.col-lg-8 Здесь вы можете создать/редактировать сниппеты. Помните, сниппеты — это «сырой» PHP-код, и если вы собираетесь делать вывод из сниппета, который будет в определенном месте шаблона, вам необходимо вернуть значение из сниппета.
-                    td.col-12.col-lg-1.text-right 800 руб
-                    td.col-12.col-lg-1.text-right 200 гр
+                    th(scope="row").col-12.col-lg-2.text-center.dishName="Название "+n++
+                    td.col-12.col-lg-8="Здесь вы "+n+" можете создать/редактировать сниппеты. Помните, сниппеты — это «сырой» PHP-код, и если вы собираетесь делать вывод из сниппета, который будет в определенном месте шаблона, вам необходимо вернуть значение из сниппета."
+                    td.col-12.col-lg-1.text-right.dishPrice=""+p+" руб"
+                    td.col-12.col-lg-1.text-right.dishWeight 200 гр
 
 block content
     section#pagecontent.page-menu.mt-5.mb-5(data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="top-bottom")
@@ -32,8 +43,8 @@ block content
 
             .tab-content#nav-tabContent
                 .tab-pane.fade.show.active#nav-home(role="tabpanel" aria-labelledby="nav-home-tab")
-                    +menutab("Ресторанное меню")
+                    +menutab("Ресторанное меню", "1")
                 .tab-pane.fade#nav-profile(role="tabpanel" aria-labelledby="nav-profile-tab")
-                    +menutab("Crazy меню")
+                    +menutab("Crazy меню", "2")
                 .tab-pane.fade#nav-contact(role="tabpanel" aria-labelledby="nav-contact-tab")
-                    +menutab("Кальянное меню")
+                    +menutab("Кальянное меню", "3")

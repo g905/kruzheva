@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap.scss"
 @import "~aos/dist/aos.css"
 @import "~slick-carousel/slick/slick"
+@import "~@fancyapps/fancybox/dist/jquery.fancybox.min.css"
 
 $font-stack: -apple-system, BlinkMacSystemFont,Merriweather,'Open Sans','Helvetica Neue',sans-serif
 $font-stack-lato: -apple-system, BlinkMacSystemFont,Lato,'Open Sans','Helvetica Neue',sans-serif
@@ -137,6 +138,33 @@ li:focus,
 .card-text
   font-size: .9rem
 
+// ======================================== Sorting ==============================
+th.sort
+    font-size: 1.3rem
+    cursor: pointer
+.sort
+    svg
+        width: 0!important
+.asc
+    svg
+        width: 0.875em!important
+        margin-left: 10px
+        transition: $trans
+        transform: rotateX(180deg)
+.desc
+    svg
+        width: 0.875em!important
+        margin-left: 10px
+        transition: $trans
+        transform: rotateX(0deg)
+  
+// =============================== Fancybox shifts fixed elements ================
+
+html
+    overflow-y: scroll
+.compensate-for-scrollbar
+    margin-right: 0 !important
+  
 // ====================================== Preloader ==============================
 
 .loader-area
@@ -268,7 +296,7 @@ li:focus,
   max-width: 40%
   justify-content: center
   list-style-type: none
-  padding: 3rem 0
+  padding: 3rem 0 1rem 0
 .slick-dots li button
   background: $white
   border-radius: 100%

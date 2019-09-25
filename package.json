@@ -43,6 +43,7 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "@fortawesome/fontawesome-svg-core": "^1.2.22",
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "aos": "^2.3.4",
@@ -50,6 +51,7 @@
     "bootstrap": "^4.3.1",
     "imagemin-webpack-plugin": "^2.4.2",
     "jquery": "^3.4.1",
+    "list.js": "^1.5.0",
     "popper.js": "^1.15.0",
     "postcss-loader": "^3.0.0",
     "slick-carousel": "^1.8.1"

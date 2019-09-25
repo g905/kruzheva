@@ -3,11 +3,14 @@ import 'popper.js';
 import 'bootstrap';
 //import 'bootstrap/js/dist/util';
 import AOS from 'aos'
+window.jQuery = $; 
+require("@fancyapps/fancybox");
 import 'slick-carousel'
+import List from 'list.js'
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import { faViber, faSkype, faWhatsapp, faVk, faYoutube, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { faMapMarkerAlt, faSearch } from '@fortawesome/free-solid-svg-icons'
-library.add( faViber, faSkype, faWhatsapp, faVk, faYoutube, faFacebook, faInstagram, faMapMarkerAlt, faSearch );
+import { faMapMarkerAlt, faSearch, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+library.add( faViber, faSkype, faWhatsapp, faVk, faYoutube, faFacebook, faInstagram, faMapMarkerAlt, faSearch, faChevronDown );
 
 // ====================================== Replace fa-icons with SVGs ===============================
 dom.watch();
@@ -40,6 +43,28 @@ $(()=>{
             }
         });
     });
+    
+    // ====================================== Fancybox =============================================
+    
+    $('[data-fancybox="gallery"]').fancybox({
+        arrows: true
+    }); 
+    
+    // ====================================== Sort Menu Tables =====================================
+    if($('.page-menu')) {
+        var options = {
+            valueNames: ['dishName', 'dishPrice', 'dishWeight']
+        };
+        
+        var dishList1 = new List('restorannoe-menyu', options);
+        var dishList2 = new List('crazy-menyu', options);
+        var dishList3 = new List('kalyannoe-menyu', options);
+        dishList1.sort('dishName')
+        dishList2.sort('dishName')
+        dishList3.sort('dishName')
+    }
+
+    
     // ====================================== Animate on scroll ====================================
     AOS.init();
 
@@ -71,7 +96,9 @@ $(()=>{
 
     // ====================================== Vacancy slide ========================================
 
-    $('.vacancy-title').click(function(e){console.log($(e.target).closest('.mycard').hasClass('hidden')); $(e.target).closest('.mycard').toggleClass('hidden')});
+    if ($(window).width() < 514) {
+        $('.vacancy-title').click(function(e){console.log($(e.target).closest('.mycard').hasClass('hidden')); $(e.target).closest('.mycard').toggleClass('hidden')});
+    }
 
     // ====================================== Vacancy-resize =======================================
 
