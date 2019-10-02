@@ -16,13 +16,16 @@ library.add( faViber, faSkype, faWhatsapp, faVk, faYoutube, faFacebook, faInstag
 dom.watch();
 
 $(()=>{
-    // Navbar icon animation ==============
+
+// ========================================= Navbar icon animation =================================
+
     $('.nav-button').on('click', function () {
         $('.animated-icon1').toggleClass('open');
     });
 
-    // Scroll to section ==============
-    $('.nav-link').each(function () {
+// =========================================== Scroll to section ===================================
+
+    /*$('.nav-link').each(function () {
         $(this).on('click', function (e) {
             //e.preventDefault();
             var sec = $(this).attr('href');
@@ -42,30 +45,34 @@ $(()=>{
                 }, 'slow');
             }
         });
+    });*/
+
+// =========================================== Navbar link collapse on click =======================
+
+    $('.nav-link, .invite-button').on('click', function(e){
+        $('.navbar-collapse').collapse('hide');
+        $('.animated-icon1').removeClass('open');
     });
-    
-    // ====================================== Fancybox =============================================
+
+// ============================================== Fancybox =========================================
     
     $('[data-fancybox="gallery"]').fancybox({
         arrows: true
     }); 
     
     // ====================================== Sort Menu Tables =====================================
-    if($('.page-menu')) {
-        var options = {
-            valueNames: ['dishName', 'dishPrice', 'dishWeight']
-        };
-        
-        var dishList1 = new List('restorannoe-menyu', options);
-        var dishList2 = new List('crazy-menyu', options);
-        var dishList3 = new List('kalyannoe-menyu', options);
-        dishList1.sort('dishName')
-        dishList2.sort('dishName')
-        dishList3.sort('dishName')
-    }
 
+    let options = {
+        valueNames: ['dishName', 'dishPrice', 'dishWeight']
+    };
+    let dynamic = {};
+    $('.menuTable').each((idx, el)=>{
+        dynamic['dishList'+idx] = new List($(el).attr('id'), options);
+        dynamic['dishList'+idx].sort('dishName');
+    });
     
     // ====================================== Animate on scroll ====================================
+
     AOS.init();
 
     // ====================================== Loader ===============================================
@@ -107,6 +114,14 @@ $(()=>{
     } else {
         $('.mycard').removeClass('hidden');
     }
+
+    // ===================================== Custom File Input =====================================
+
+    $('#customFile').change((e)=>{
+        let filename = $(e.target).val();
+        filename = filename.substring(filename.lastIndexOf("\\") + 1, filename.length);
+        $(e.target).next('.custom-file-label').html(filename);
+    });
 
     // ====================================== Test pug and js ======================================
 
@@ -247,3 +262,18 @@ $(()=>{
     });
 
 });
+
+// ===================== Put recaptcha callback function in the global scope of window
+
+window.recaptchaCallback = function() {
+    let sitekey = '6LemzboUAAAAAJzmf2fSgcOUAlktNQRm6jZ21yxd';
+    grecaptcha.render('gRecaptchaInvitation', {
+        'sitekey' : sitekey
+    });
+    grecaptcha.render('gRecaptchaVacancy', {
+        'sitekey' : sitekey
+    });
+    grecaptcha.render('gRecaptchaPrivilege', {
+        'sitekey' : sitekey
+    });
+}

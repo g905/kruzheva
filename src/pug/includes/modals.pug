@@ -1,0 +1,80 @@
+.modals
+    .modal.fade#invitationModal(tabindex="-1" role="dialog" aria-labelledby="invitationModalLabel" aria-hidden="true").pt-5.pt-lg-0
+        .modal-dialog.modal-dialog-centered(role="document")
+            form.modal-content(action="/index.html").p-0.p-lg-3
+                .modal-header
+                    h4.modal-title.text-uppercase Получить приглашение
+                    button(type="button" data-dismiss="modal" aria-label="Close").close
+                        span(aria-hidden="true") &times;
+                .modal-body
+                    .form-group
+                        input(type="text" aria-describedby="nameHelp" placeholder="Ваше имя").form-control#InvitationInputName
+                        small#invitationNameHelp.form-text.text-danger Это поле обязательно для заполнения.
+                    .form-group
+                        input(type="tel" aria-describedby="phoneHelp" placeholder="Ваш телефон").form-control#InvitationInputPhone
+                        small#invitationPhoneHelp.form-text.text-danger Это поле обязательно для заполнения.
+                    .form-group
+                        input(type="email" aria-describedby="emailHelp" placeholder="Ваш email").form-control#InvitationInputEmail1
+                        small#invitationEmailHelp.form-text.text-danger Это поле обязательно для заполнения.
+                    .form-group
+                        input(type="text" aria-describedby="programHelp" placeholder="Выбор шоу-программы").form-control#InvitationInputProgram
+                        small#invitationProgramHelp.form-text.text-danger Это поле обязательно для заполнения.
+                    .form-group
+                        textarea(placeholder="Комментарий").form-control#InvitationInputComment
+                        small#invitationCommentHelp.form-text.text-danger Это поле обязательно для заполнения.
+                    p Нажимая на кнопку, вы даете согласие на обработку персональных данных. <a href="#"> Узнать больше </a>
+                .modal-footer.d-flex.flex-wrap.justify-content-between
+                    .g-recaptcha.mb-3.mb-lg-0#gRecaptchaInvitation
+                    button(type="submit").btn.kruzheva-btn.m-auto.m-lg-none Получить
+                    
+    .modal.fade#vacancyModal(tabindex="-1" role="dialog" aria-labelledby="vacancyModalLabel" aria-hidden="true").pt-5.pt-lg-0
+        .modal-dialog.modal-dialog-centered(role="document")
+            form.modal-content(action="/index.html").p-0.p-lg-3
+                .modal-header
+                    h4.modal-title.text-uppercase Откликнуться на вакансию
+                    button(type="button" data-dismiss="modal" aria-label="Close").close
+                        span(aria-hidden="true") &times;
+                .modal-body
+                    .form-group
+                        input(type="text" aria-describedby="nameHelp" placeholder="Ваше имя").form-control#vacancyInputName
+                        small#vacancyNameHelp.form-text.text-danger Это поле обязательно для заполнения.
+                    .form-group
+                        input(type="tel" aria-describedby="phoneHelp" placeholder="Ваш телефон").form-control#vacancyInputPhone
+                        small#vacancyPhoneHelp.form-text.text-danger Это поле обязательно для заполнения.
+                    .form-group
+                        input(type="email" aria-describedby="emailHelp" placeholder="Ваш email").form-control#vacancyInputEmail1
+                        small#vacancyEmailHelp.form-text.text-danger Это поле обязательно для заполнения.
+                    .form-group
+                        textarea(placeholder="Комментарий").form-control#vacancyInputComment
+                        small#vacancyCommentHelp.form-text.text-danger Это поле обязательно для заполнения.
+                    .custom-file
+                        input(type="file").custom-file-input#customFile
+                        label.custom-file-label.form-control(for="customFile") Прикрепить резюме
+
+                    p.mt-4 Нажимая на кнопку, вы даете согласие на обработку персональных данных. <a href="#"> Узнать больше </a>
+                .modal-footer.d-flex.flex-wrap.justify-content-between
+                    .g-recaptcha.mb-3.mb-lg-0#gRecaptchaVacancy
+                    button(type="submit").btn.kruzheva-btn.m-auto.m-lg-none Откликнуться
+                    
+    .modal.fade#privilegeModal(tabindex="-1" role="dialog" aria-labelledby="privilegeModalLabel" aria-hidden="true").pt-5.pt-lg-0
+        .modal-dialog.modal-dialog-centered(role="document")
+            form.modal-content(action="/index.html").p-0.p-lg-3
+                .modal-header
+                    h4.modal-title.text-uppercase Заказать карту привилегий
+                    button(type="button" data-dismiss="modal" aria-label="Close").close
+                        span(aria-hidden="true") &times;
+                .modal-body
+                    .form-group
+                        input(type="text" aria-describedby="nameHelp" placeholder="Ваше имя").form-control#privilegeInputName
+                        small#privilegeNameHelp.form-text.text-danger Это поле обязательно для заполнения.
+                    .form-group
+                        input(type="tel" aria-describedby="phoneHelp" placeholder="Ваш телефон").form-control#privilegeInputPhone
+                        small#privilegePhoneHelp.form-text.text-danger Это поле обязательно для заполнения.
+                    .form-group
+                        input(type="email" aria-describedby="emailHelp" placeholder="Ваш email").form-control#privilegeInputEmail1
+                        small#privilegeEmailHelp.form-text.text-danger Это поле обязательно для заполнения.
+                    p Нажимая на кнопку, вы даете согласие на обработку персональных данных. <a href="#"> Узнать больше </a>
+                .modal-footer.d-flex.flex-wrap.justify-content-between
+                    .g-recaptcha.mb-3.mb-lg-0#gRecaptchaPrivilege
+                    button(type="submit").btn.kruzheva-btn.m-auto.m-lg-none Заказать
+    

@@ -2,7 +2,7 @@
 - let menuItems = {"about": "О компании", "afisha": "Афиша", "gallery": "Фотогалерея", "services": "Услуги клуба", "info": "Новости и статьи", "about-club":"О клубе"}
 section#footer
     .container
-        .row.d-flex.align-items-center
+        .row.d-flex.align-items-start
             .col-12.col-lg-3.order-4.order-lg-1
                 .social-icons
                     ul.d-flex.flex-nowrap.flex-lg-wrap.text-left.justify-content-center.w-80.mt-3.mb-3
@@ -28,4 +28,4 @@ section#footer
                         a(href="tel:+79128577186") +79128577186
                     .email.mb-3
                         a(href="mailto:login@gmail.com") login@gmail.com
-                    .btn.kruzheva-btn.float-right.d-none.d-lg-block Получить приглашение
+                    .btn.kruzheva-btn.float-right.d-none.d-lg-block(data-toggle="modal" data-target="#invitationModal") Получить приглашение

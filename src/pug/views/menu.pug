@@ -3,15 +3,15 @@ extends ../includes/layout
 mixin menutab(title, num)
     .title.text-center.mb-5
         h4=title
-    table(id = "menuTable"+num).table.table-striped.table-dark.table-borderless
+    table(id = "menuTable"+num).table.table-striped.table-dark.table-borderless.menuTable
         thead.d-none.d-lg-block
             tr.row.text-center
-                th(scope="row").col-12.col-lg-2.sort(data-sort = "dishName") Название
+                th(scope="row" data-sort = "dishName").col-12.col-lg-2.sort Название
                     i.fas.fa-chevron-down
                 th(scope="col").col-12.col-lg-8
-                th(scope="col").col-12.col-lg-1.sort(data-sort = "dishPrice") Цена
+                th(scope="col" data-sort = "dishPrice").col-12.col-lg-1.sort Цена
                     i.fas.fa-chevron-down
-                th(scope="col").col-12.col-lg-1.sort(data-sort = "dishWeight") Вес
+                th(scope="col" data-sort = "dishWeight").col-12.col-lg-1.sort Вес
                     i.fas.fa-chevron-down
         tbody.list
             - let n = 1

@@ -138,6 +138,48 @@ li:focus,
 .card-text
   font-size: .9rem
 
+// ================================ Modals =======================================
+
+// =========================== Fix page shift with open modal ====================
+.modal, .modal-open
+  padding-right: unset!important
+
+
+.modal
+  color: $black
+  a
+    color: $black
+    opacity: .9
+    transition: $trans
+    &:hover
+      opacity: 1
+  .form-control
+    border: 0
+    border-radius: unset
+    border-bottom: 1px solid $gray-600
+.modal-header
+  border-bottom: unset
+  h5, h4, h3, h2, h1
+    color: $black
+.modal-footer
+  border-top: unset
+
+// =================================== Custom INput File ========================
+
+.custom-file-label
+  &::after
+    content: "Обзор"
+.custom-file-input, .custom-file-label
+  &:active
+    outline: none!important
+    box-shadow: unset!important
+
+// ==================================== Recaptcha sizing ========================
+
+.g-recaptcha
+  transform: scale(.9)
+  transform-origin: 0 0
+
 // ======================================== Sorting ==============================
 th.sort
     font-size: 1.3rem
@@ -164,7 +206,7 @@ html
     overflow-y: scroll
 .compensate-for-scrollbar
     margin-right: 0 !important
-  
+
 // ====================================== Preloader ==============================
 
 .loader-area
